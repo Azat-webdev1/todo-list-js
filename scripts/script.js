@@ -45,8 +45,14 @@ todoControl.addEventListener('submit', (event) => {
     value: headerInput.value,
     completed: false
   };
-
+  
+  if (!newTodo.value) {
+    return;
+  }
+  
   todoData.push(newTodo);
+  
+  headerInput.value = '';
   
   render();
 });
